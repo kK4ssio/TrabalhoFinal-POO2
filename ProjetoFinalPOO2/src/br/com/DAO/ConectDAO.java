@@ -17,15 +17,14 @@ public class ConectDAO {
         String user = "root";
         String password = "root";
 
-    try{
-    Class.forName(driver);
-        conexao = DriverManager.getConnection(url, user, password);
-        return conexao;
-    }
-    catch(Exception e){
-    JOptionPane.showMessageDialog(null, "Conexao " + e);
-     return null;
-    }
+        try {
+            Class.forName(driver);
+            conexao = DriverManager.getConnection(url, user, password);
+            return conexao;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Conexao " + e);
+            return null;
+        }
 
-}
+    }
 }

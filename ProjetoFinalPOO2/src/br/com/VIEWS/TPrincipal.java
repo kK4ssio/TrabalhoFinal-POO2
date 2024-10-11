@@ -5,6 +5,9 @@
  */
 package br.com.VIEWS;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author aluno.saolucas
@@ -16,6 +19,7 @@ public class TPrincipal extends javax.swing.JFrame {
      */
     public TPrincipal() {
         initComponents();
+
     }
 
     /**
@@ -36,7 +40,8 @@ public class TPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         subMenuUser = new javax.swing.JMenuItem();
         subMenuClient = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        a = new javax.swing.JMenu();
+        menuAgenda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal");
@@ -55,7 +60,7 @@ public class TPrincipal extends javax.swing.JFrame {
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGap(0, 474, Short.MAX_VALUE)
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -64,7 +69,7 @@ public class TPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 188, Short.MAX_VALUE)
+            .addGap(0, 419, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +98,7 @@ public class TPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -126,8 +131,22 @@ public class TPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Agenda");
-        jMenuBar1.add(jMenu2);
+        a.setText("Agenda");
+        a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aActionPerformed(evt);
+            }
+        });
+
+        menuAgenda.setText("Agendas");
+        menuAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAgendaActionPerformed(evt);
+            }
+        });
+        a.add(menuAgenda);
+
+        jMenuBar1.add(a);
 
         setJMenuBar(jMenuBar1);
 
@@ -157,6 +176,16 @@ public class TPrincipal extends javax.swing.JFrame {
         cliente.setVisible(true);
         Desktop.add(cliente);
     }//GEN-LAST:event_subMenuClientActionPerformed
+
+    private void aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aActionPerformed
+
+    }//GEN-LAST:event_aActionPerformed
+
+    private void menuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAgendaActionPerformed
+        TAgenda agenda = new TAgenda();
+        agenda.setVisible(true);
+
+    }//GEN-LAST:event_menuAgendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,13 +224,14 @@ public class TPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
+    private javax.swing.JMenu a;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JMenuItem menuAgenda;
     private javax.swing.JMenuItem subMenuClient;
     private javax.swing.JMenuItem subMenuUser;
     // End of variables declaration//GEN-END:variables
