@@ -18,6 +18,13 @@ values('administrador', 'admin@email','admin', 'admin');
 
 select * from usuarios;
 
+-- Alterar dados
+ update usuarios set nome = ?, email = ?, username = ?, senha = ? where id;
+ 
+
+-- deletar dados
+delete from usuarios where id = ?;
+
 
     -- tabela clientes
 create table clientes(
