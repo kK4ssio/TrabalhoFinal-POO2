@@ -20,7 +20,7 @@ public class TCadasUser extends javax.swing.JInternalFrame {
      */
     public TCadasUser() {
         initComponents();
-        
+
         ConectDAO.conector();
     }
 
@@ -50,8 +50,10 @@ public class TCadasUser extends javax.swing.JInternalFrame {
         btnPesq = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtIdUsu = new javax.swing.JTextField();
+        btnLimpar = new javax.swing.JButton();
         txtSenhaUsu = new javax.swing.JPasswordField();
 
+        setClosable(true);
         setTitle("Cadastro Usuário");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -79,6 +81,11 @@ public class TCadasUser extends javax.swing.JInternalFrame {
 
         btnEdit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnEdit.setText("Editar");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnExc.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnExc.setText("Excluir");
@@ -88,9 +95,23 @@ public class TCadasUser extends javax.swing.JInternalFrame {
             }
         });
 
+        btnPesq.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnPesq.setText("Pesqisar");
+        btnPesq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesqActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("ID");
+
+        btnLimpar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -107,7 +128,8 @@ public class TCadasUser extends javax.swing.JInternalFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtIdUsu)
-                        .addGap(8, 8, 8)))
+                        .addGap(8, 8, 8))
+                    .addComponent(btnLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -119,7 +141,9 @@ public class TCadasUser extends javax.swing.JInternalFrame {
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPesq)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLimpar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(btnEdit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnExc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,20 +230,20 @@ public class TCadasUser extends javax.swing.JInternalFrame {
         String email_usuario = txtEmailUsu.getText();
         String login_usuario = txtLoginUsu.getText();
         String senha_usuario = txtSenhaUsu.getText();
-        
+
         UserDTO uDTO = new UserDTO();
         uDTO.setNome(nome_usuario);
         uDTO.setEmail(email_usuario);
         uDTO.setUsername(login_usuario);
         uDTO.setSenha(senha_usuario);
-        
+
         UsersDAO uDAO = new UsersDAO();
         uDAO.NovoUsu(uDTO);
-        
+
     }//GEN-LAST:event_btnCadasActionPerformed
 
     private void btnExcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcActionPerformed
-   String id_usuario = txtIdUsu.getText();
+        String id_usuario = txtIdUsu.getText();
 
         UserDTO objUsuarioDTO = new UserDTO();
         objUsuarioDTO.setId(Integer.parseInt(id_usuario));
@@ -228,11 +252,53 @@ public class TCadasUser extends javax.swing.JInternalFrame {
         objUsuarioDAO.ApagaUsu(objUsuarioDTO);
     }//GEN-LAST:event_btnExcActionPerformed
 
+    private void btnPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesqActionPerformed
+        int id_usuario = Integer.parseInt(txtIdUsu.getText());
+        String nome_usuario = txtNomeUsu.getText();
+        String email_usuario = txtEmailUsu.getText();
+        String login_usuario = txtLoginUsu.getText();
+        String senha_usuario = txtSenhaUsu.getText();
+        
+        UserDTO uDTO = new UserDTO();
+        uDTO.setId(id_usuario);
+        uDTO.setNome(nome_usuario);
+        uDTO.setEmail(email_usuario);
+        uDTO.setUsername(login_usuario);
+        uDTO.setSenha(senha_usuario);
+        
+        UsersDAO uDAO = new UsersDAO();
+        uDAO.ProcuraUsu(uDTO);
+    }//GEN-LAST:event_btnPesqActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        int id_usuario = Integer.parseInt(txtIdUsu.getText());
+        String nome_usuario = txtNomeUsu.getText();
+        String email_usuario = txtEmailUsu.getText();
+        String login_usuario = txtLoginUsu.getText();
+        String senha_usuario = txtSenhaUsu.getText();
+        
+        UserDTO uDTO = new UserDTO();
+        uDTO.setId(id_usuario);
+        uDTO.setNome(nome_usuario);
+        uDTO.setEmail(email_usuario);
+        uDTO.setUsername(login_usuario);
+        uDTO.setSenha(senha_usuario);
+        
+        UsersDAO uDAO = new UsersDAO();
+        uDAO.EditarUsu(uDTO);
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        UsersDAO uDAO = new UsersDAO();
+        uDAO.LimpaCampos();
+    }//GEN-LAST:event_btnLimparActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadas;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnExc;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnPesq;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -244,7 +310,7 @@ public class TCadasUser extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     public static javax.swing.JTextField txtEmailUsu;
-    private javax.swing.JTextField txtIdUsu;
+    public static javax.swing.JTextField txtIdUsu;
     public static javax.swing.JTextField txtLoginUsu;
     public static javax.swing.JTextField txtNomeUsu;
     public static javax.swing.JPasswordField txtSenhaUsu;
