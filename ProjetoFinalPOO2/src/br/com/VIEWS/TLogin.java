@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author aluno.saolucas
@@ -41,6 +42,8 @@ public class TLogin extends javax.swing.JFrame {
             if (rs.next()) {
                 TPrincipal principal = new TPrincipal();
                 principal.setVisible(true);//mudamos a visualizacao da tela
+                
+                dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos.");
             }
@@ -158,6 +161,7 @@ public class TLogin extends javax.swing.JFrame {
         btnLogar.setBackground(new java.awt.Color(255, 255, 255));
         btnLogar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnLogar.setForeground(new java.awt.Color(153, 51, 255));
+        btnLogar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Entra.png"))); // NOI18N
         btnLogar.setText("Entrar");
         btnLogar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 7, true));
         btnLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -272,6 +276,7 @@ public class TLogin extends javax.swing.JFrame {
 
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
         Logar();
+
     }//GEN-LAST:event_btnLogarActionPerformed
 
     /**

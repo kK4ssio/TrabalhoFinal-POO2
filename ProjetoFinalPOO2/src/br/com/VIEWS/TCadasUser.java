@@ -34,12 +34,9 @@ public class TCadasUser extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtNomeUsu = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        btnCadas = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         txtEmailUsu = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtLoginUsu = new javax.swing.JTextField();
@@ -52,61 +49,88 @@ public class TCadasUser extends javax.swing.JInternalFrame {
         txtIdUsu = new javax.swing.JTextField();
         btnLimpar = new javax.swing.JButton();
         txtSenhaUsu = new javax.swing.JPasswordField();
+        jPanel3 = new javax.swing.JPanel();
+        btnCadas = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Cadastro Usuário");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel2.setText("Cadastrar Usuários");
-
+        jLabel1.setForeground(new java.awt.Color(153, 51, 255));
         jLabel1.setText("Nome");
 
+        txtNomeUsu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel3.setForeground(new java.awt.Color(153, 51, 255));
         jLabel3.setText("Email");
 
-        btnCadas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnCadas.setText("Cadastrar");
-        btnCadas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadasActionPerformed(evt);
-            }
-        });
+        txtEmailUsu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel4.setForeground(new java.awt.Color(153, 51, 255));
         jLabel4.setText("Login");
 
+        txtLoginUsu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel5.setForeground(new java.awt.Color(153, 51, 255));
         jLabel5.setText("Senha");
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(153, 51, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
+        btnEdit.setBackground(new java.awt.Color(255, 255, 255));
         btnEdit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnEdit.setForeground(new java.awt.Color(153, 51, 255));
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Edita.png"))); // NOI18N
         btnEdit.setText("Editar");
+        btnEdit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 4));
+        btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
             }
         });
 
+        btnExc.setBackground(new java.awt.Color(255, 255, 255));
         btnExc.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnExc.setForeground(new java.awt.Color(153, 51, 255));
+        btnExc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Apaga.png"))); // NOI18N
         btnExc.setText("Excluir");
+        btnExc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
+        btnExc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcActionPerformed(evt);
             }
         });
 
+        btnPesq.setBackground(new java.awt.Color(255, 255, 255));
         btnPesq.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnPesq.setForeground(new java.awt.Color(153, 51, 255));
+        btnPesq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Pesquisa.png"))); // NOI18N
         btnPesq.setText("Pesqisar");
+        btnPesq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 4));
+        btnPesq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPesq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesqActionPerformed(evt);
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("ID");
 
+        txtIdUsu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 255));
         btnLimpar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnLimpar.setForeground(new java.awt.Color(153, 51, 255));
+        btnLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Limpar.png"))); // NOI18N
         btnLimpar.setText("Limpar");
+        btnLimpar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 4));
+        btnLimpar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparActionPerformed(evt);
@@ -140,44 +164,80 @@ public class TCadasUser extends javax.swing.JInternalFrame {
                     .addComponent(txtIdUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPesq)
+                .addComponent(btnPesq, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLimpar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEdit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnExc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+
+        txtSenhaUsu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jPanel3.setBackground(new java.awt.Color(153, 51, 255));
+
+        btnCadas.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnCadas.setForeground(new java.awt.Color(153, 51, 255));
+        btnCadas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Adiciona.png"))); // NOI18N
+        btnCadas.setText("Cadastrar");
+        btnCadas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 7));
+        btnCadas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadasActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Cadastrar Usuários");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(btnCadas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtEmailUsu, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtNomeUsu)
+                    .addComponent(txtLoginUsu, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtSenhaUsu, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmailUsu, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtNomeUsu)
-                            .addComponent(txtLoginUsu, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtSenhaUsu, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
-                        .addComponent(btnCadas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel1))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,16 +258,11 @@ public class TCadasUser extends javax.swing.JInternalFrame {
                         .addComponent(txtLoginUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSenhaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(7, 7, 7))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -308,7 +363,7 @@ public class TCadasUser extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel jPanel3;
     public static javax.swing.JTextField txtEmailUsu;
     public static javax.swing.JTextField txtIdUsu;
     public static javax.swing.JTextField txtLoginUsu;
