@@ -47,7 +47,7 @@ public class ClientsDAO {
     }
      public void ApagaCli(ClientDTO objClientDTO) {
 
-        String sql = "delete from clientes where id_cliente = ?";
+        String sql = "DELETE FROM clientes WHERE id_cliente = ?";
         conexao = ConectDAO.conector();
 
         try {
@@ -100,7 +100,7 @@ public class ClientsDAO {
     }
       public void EditarCli(ClientDTO objClientDTO) {
           
-        String sql = "update clientes set nome_cliente = ?, endereco = ?, telefone = ?, email_cliente = ?, cpf_cnpj = ? where cliente_id = ?";
+        String sql = "update clientes set nome_cliente = ?, endereco = ?, telefone = ?, email_cliente = ?, cpf_cnpj = ? where id_cliente = ?";
         conexao = ConectDAO.conector();
 
         try {

@@ -9,7 +9,7 @@ import java.sql.*;
 public class AgendaDTO {
 
     private int id_agenda;
-    private String data_agenda, hora, descricao;
+    private String data_agenda, hora, descricao, cliente_associado;
 
     public int getId_agenda() {
         return id_agenda;
@@ -42,4 +42,14 @@ public class AgendaDTO {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public String getCliente_associado() {
+        return cliente_associado;
+    }
+
+    public void setCliente_associado(String cliente_associado) {
+        this.cliente_associado = cliente_associado;
+    }
+
+
 }

@@ -35,8 +35,8 @@ public class TPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        ImageIcon icona = new ImageIcon(getClass().getResource("/img/deskFoto"
-            + ".jpg"));
+        ImageIcon icona = new ImageIcon(getClass().getResource("/img/Desk"
+            + ".gif"));
     Image img = icona.getImage();
     Desktop = new javax.swing.JDesktopPane(){
         public void paintComponent(Graphics g){
