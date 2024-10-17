@@ -1,5 +1,3 @@
-´´´
-
 -- Criar o banco de dados
 CREATE DATABASE finalproj;
 
@@ -57,18 +55,23 @@ DELETE FROM clientes WHERE id_cliente = ?;
 UPDATE clientes SET nome_cliente = ?, endereco = ?, telefone = ?, email_cliente = ?, cpf_cnpj = ? WHERE id_cliente = ?;
 
 -- Tabela agenda
-CREATE TABLE agenda (
+CREATE TABLE agendar (
     id_agenda INT AUTO_INCREMENT PRIMARY KEY,
-    data_agenda VARCHAR(6),
+    cliente_associado VARCHAR(50),
+    data_agenda VARCHAR(8),
     hora VARCHAR(4),
-    descricao VARCHAR(100),
-    cliente_id INT,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id_cliente)
+    descricao VARCHAR(100)
 );
 
 -- Inserir dados na tabela agenda
-INSERT INTO agenda (data_agenda, hora, descricao, cliente_id)
-VALUES ('060424', '2300', 'agenda marcada', ?);
+INSERT INTO agendar (cliente_associado, data_agenda, hora, descricao)
+VALUES ('cliente 1', '25122024', '2200', 'festa de natal');
 
 -- Selecionar todos os dados da tabela agenda
-SELECT * FROM agenda;
+SELECT * FROM agendar;
+
+-- Deletar dados
+DELETE FROM agendar WHERE id_agenda = ?;
+
+-- Alterar dados
+UPDATE agendar SET cliente_associado = ?,  data_agenda  = ?, hora  = ?,  descricao = ? WHERE id_cliente = ?;
