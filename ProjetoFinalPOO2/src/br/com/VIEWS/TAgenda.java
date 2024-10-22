@@ -244,7 +244,7 @@ public class TAgenda extends javax.swing.JFrame {
         btnAtt.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         btnAtt.setForeground(new java.awt.Color(255, 255, 255));
         btnAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Recargar.gif"))); // NOI18N
-        btnAtt.setBorder(null);
+        btnAtt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 4));
         btnAtt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAtt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
