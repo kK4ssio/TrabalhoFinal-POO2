@@ -240,11 +240,11 @@ public class TAgenda extends javax.swing.JFrame {
         TabelaAgenda.setGridColor(new java.awt.Color(153, 51, 255));
         jScrollPane2.setViewportView(TabelaAgenda);
 
-        btnAtt.setBackground(new java.awt.Color(153, 51, 255));
+        btnAtt.setBackground(new java.awt.Color(255, 255, 255));
         btnAtt.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         btnAtt.setForeground(new java.awt.Color(255, 255, 255));
-        btnAtt.setText("Atualiza");
-        btnAtt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 4));
+        btnAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Recargar.gif"))); // NOI18N
+        btnAtt.setBorder(null);
         btnAtt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAtt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,6 +263,7 @@ public class TAgenda extends javax.swing.JFrame {
         btnDel.setBackground(new java.awt.Color(153, 51, 255));
         btnDel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDel.setForeground(new java.awt.Color(255, 255, 255));
+        btnDel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Apaga.png"))); // NOI18N
         btnDel.setText("Apaga");
         btnDel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 4));
         btnDel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -277,6 +278,8 @@ public class TAgenda extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(153, 51, 255));
         jLabel8.setText("Procurar compromisso");
 
+        txtID.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         jLabel9.setBackground(new java.awt.Color(153, 51, 255));
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 51, 255));
@@ -285,6 +288,7 @@ public class TAgenda extends javax.swing.JFrame {
         btnPesq.setBackground(new java.awt.Color(153, 51, 255));
         btnPesq.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnPesq.setForeground(new java.awt.Color(255, 255, 255));
+        btnPesq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Pesquisa.png"))); // NOI18N
         btnPesq.setText("Procura");
         btnPesq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 4));
         btnPesq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -342,8 +346,8 @@ public class TAgenda extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -352,7 +356,7 @@ public class TAgenda extends javax.swing.JFrame {
                 .addComponent(btnAtt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
