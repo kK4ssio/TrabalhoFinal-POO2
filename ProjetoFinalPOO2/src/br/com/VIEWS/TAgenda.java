@@ -50,6 +50,12 @@ public class TAgenda extends javax.swing.JFrame {
         TabelaAgenda = new javax.swing.JTable();
         btnAtt = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        btnDel = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        btnPesq = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -238,7 +244,7 @@ public class TAgenda extends javax.swing.JFrame {
         btnAtt.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         btnAtt.setForeground(new java.awt.Color(255, 255, 255));
         btnAtt.setText("Atualiza");
-        btnAtt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 3));
+        btnAtt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 4));
         btnAtt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAtt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,15 +252,84 @@ public class TAgenda extends javax.swing.JFrame {
             }
         });
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+
+        jLabel7.setBackground(new java.awt.Color(153, 51, 255));
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 51, 255));
+        jLabel7.setText("Deletar compromisso");
+
+        btnDel.setBackground(new java.awt.Color(153, 51, 255));
+        btnDel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnDel.setForeground(new java.awt.Color(255, 255, 255));
+        btnDel.setText("Apaga");
+        btnDel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 4));
+        btnDel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setBackground(new java.awt.Color(153, 51, 255));
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 51, 255));
+        jLabel8.setText("Procurar compromisso");
+
+        jLabel9.setBackground(new java.awt.Color(153, 51, 255));
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 51, 255));
+        jLabel9.setText("ID");
+
+        btnPesq.setBackground(new java.awt.Color(153, 51, 255));
+        btnPesq.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnPesq.setForeground(new java.awt.Color(255, 255, 255));
+        btnPesq.setText("Procura");
+        btnPesq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255), 4));
+        btnPesq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesqActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPesq, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 72, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(btnPesq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -263,11 +338,11 @@ public class TAgenda extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(btnAtt)
-                .addGap(0, 473, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -278,8 +353,8 @@ public class TAgenda extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -405,6 +480,34 @@ public class TAgenda extends javax.swing.JFrame {
         aaDAO.pesquisaAuto();
     }//GEN-LAST:event_btnAttActionPerformed
 
+    private void btnPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesqActionPerformed
+        int id = Integer.parseInt(txtID.getText());
+        String cliente = txtCliAss.getText();
+        String data = txtData.getText();
+        String hora = txtHora.getText();
+        String descricao = txtDesc.getText();
+
+        AgendaDTO aDTO = new AgendaDTO();
+         aDTO.setId_agenda(id);
+        aDTO.setCliente_associado(cliente);
+        aDTO.setData_agenda(data);
+        aDTO.setHora(hora);
+        aDTO.setDescricao(descricao);
+       
+        AgendaDAO CDAO = new AgendaDAO();
+        CDAO.Procura(aDTO);  
+    }//GEN-LAST:event_btnPesqActionPerformed
+
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
+      String id = txtID.getText();
+
+        AgendaDTO objADTO = new AgendaDTO();
+        objADTO.setId_agenda(Integer.parseInt(id));
+
+         AgendaDAO CDAO = new AgendaDAO();
+        CDAO.Apaga(objADTO);
+    }//GEN-LAST:event_btnDelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -443,7 +546,9 @@ public class TAgenda extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTable TabelaAgenda;
     private javax.swing.JButton btnAtt;
+    private javax.swing.JButton btnDel;
     private javax.swing.JButton btnLimpa;
+    private javax.swing.JButton btnPesq;
     private javax.swing.JButton btnRegis;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -451,6 +556,9 @@ public class TAgenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -466,5 +574,6 @@ public class TAgenda extends javax.swing.JFrame {
     public static javax.swing.JTextField txtData;
     public static javax.swing.JTextField txtDesc;
     public static javax.swing.JTextField txtHora;
+    public static javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }

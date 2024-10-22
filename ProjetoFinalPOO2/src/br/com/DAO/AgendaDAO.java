@@ -32,7 +32,7 @@ public class AgendaDAO {
                     String nome = rs.getString("cliente_associado");
                     
                     String data = rs.getString("data_agenda");
-                  String dataFormatada = data.substring(0, 2) + "/" + data.substring(2, 4) + "/" + data.substring(4, 8);
+                    String dataFormatada = data.substring(0, 2) + "/" + data.substring(2, 4) + "/" + data.substring(4, 8);
                     
                     String hora = rs.getString("hora");
                     String horaFormatada = hora.substring(0, 2) + ":" + hora.substring(2, 4);
@@ -81,6 +81,67 @@ public class AgendaDAO {
         }
 
     }
+    
+    
+     public void Apaga(AgendaDTO objADTO) {
+
+        String sql = "DELETE FROM agendar WHERE id_agenda = ?";
+        conexao = ConectDAO.conector();
+
+        try {
+
+            pst = conexao.prepareStatement(sql);
+            
+            pst.setInt(1, objADTO.getId_agenda());
+          
+
+            int del = pst.executeUpdate();
+
+            if (del > 0) {
+                conexao.close();
+                JOptionPane.showMessageDialog(null, "Agendamento deletado");
+                LimpaCampos();
+                pesquisaAuto();
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " metodo apagar " + e);
+
+        }
+        
+     }
+
+        
+         public void Procura(AgendaDTO objADTO) {
+             
+        String sql = "select * from agendar where id_agenda = ?";
+        conexao = ConectDAO.conector();
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setInt(1, objADTO.getId_agenda());
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+                TAgenda.txtCliAss.setText(rs.getString(2));
+                TAgenda.txtData.setText(rs.getString(3));
+                TAgenda.txtHora.setText(rs.getString(4));
+                TAgenda.txtDesc.setText(rs.getString(5));
+              
+                conexao.close();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Agendamento não existe");
+               LimpaCampos();
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " Método Pesquisar" + e);
+        }
+
+    }
+        
+    
      public void LimpaCampos(){
          TAgenda.txtCliAss.setText(null);
          TAgenda.txtData.setText(null);
